@@ -25,9 +25,9 @@ class SearchResultController {
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping() -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let titleQueryItem = URLQueryItem(name: "term", value: searchTerm)
         
-        urlComponents?.queryItems = [searchTermQueryItem]
+        urlComponents?.queryItems = [titleQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
